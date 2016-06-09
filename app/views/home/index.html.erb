@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Question Queue</title>
+  </head>
+  <body>
+    <h1>Figmints Question Queue</h1>
+
+    <%= form_for @question do |f| %>
+      <div class="question-input">
+        <%= f.label :enter_question %>
+        <%= f.text_field :title, autofocus: true %>
+      </div>
+    <% end %>
+
+
+  </body>
+</html>
