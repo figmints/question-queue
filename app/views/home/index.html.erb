@@ -9,8 +9,11 @@
 
     <%= form_for @question do |f| %>
       <div class="question-input">
-        <%= f.label :enter_question %>
+        <%= f.label :title %>
         <%= f.text_field :title, autofocus: true %>
+      </div>
+      <div class="question-submit">
+        <%= f.submit "Ask!", class: "button", id: "save_button" %>
       </div>
     <% end %>
 
