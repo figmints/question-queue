@@ -13,7 +13,6 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
     @question.user = current_user
 
-    # binding.pry
     if @question.save
       redirect_to questions_path
     else
