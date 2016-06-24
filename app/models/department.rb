@@ -1,6 +1,6 @@
 class Department < ActiveRecord::Base
   belongs_to :question
-  has_many :users
+  belongs_to :user
 
   DEPARTMENT = [
     "Development",

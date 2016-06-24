@@ -13,11 +13,13 @@
     <%= f.text_field :last_name %>
   </div>
 
-  <!-- <div class="field">
-    <%= f.label :department %>
-    <%= f.select :department,
-        Department::DEPARTMENT, class: "department dropdown"%>
-  </div> -->
+  <div class="field">
+    <%= f.fields_for :department do |d| %>
+      <%= d.label :department %>
+      <%= d.select :name,
+          Department::DEPARTMENT, class: "department dropdown"%>
+    <% end %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
