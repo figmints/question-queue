@@ -1,0 +1,12 @@
+<body class="profile-page">
+  <section>
+    <h1>Hello <%= current_user.first_name %>!</h1>
+    <column>
+      <p class="user-name">User Name: <%= current_user.first_name %> <%= current_user.last_name %></p>
+      <p class="user-email">User Email: <%= current_user.email %></p>
+      <%= @department.name %>
+
+      </p>
+    </column>
+  </section>
+</body>
