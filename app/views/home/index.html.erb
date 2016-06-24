@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Question Queue</title>
+  </head>
+  <body>
+    <h1>Figmints Question Queue</h1>
+
+    <%= form_for @question do |f| %>
+      <div class="question-input">
+        <%= f.label :title %>
+        <%= f.text_field :title, autofocus: true %>
+      </div>
+      <div class="question-input">
+        <%= f.label :department %>
+        <%= f.select :department,
+            Department::DEPARTMENT, class: "department dropdown"%>
+      </div>
+      <div class="question-submit">
+        <%= f.submit "Ask!", class: "button", id: "save_button" %>
+      </div>
+    <% end %>
+
+
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Questions</title>
+  </head>
+  <body>
+    <% @questions.each do |p| %>
+      <div class="title">
+        Question: <%= p.title %>
+      </div>
+      <div class="department">
+        Department: <%= p.department %>
+      </div>
+      <br>
+    <% end %>
+  </body>
+</html>

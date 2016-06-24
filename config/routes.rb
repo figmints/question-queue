@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
   root 'home#index'
-  resources :articles, only: [:index]
+
+  devise_for :users, controllers: { registrations: "registrations" }
+
+  resources :questions, only: [:index, :create]
+  resources :profiles
 end
