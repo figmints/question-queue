@@ -9,6 +9,7 @@ class RegistrationsController < Devise::RegistrationsController
 
     @user = User.new(user_params)
     @user.save
+    # broken feature will look into sign-up redirect to user logged in
     redirect_to root_path
     # @user = current_user.users_build(user_params)
 
