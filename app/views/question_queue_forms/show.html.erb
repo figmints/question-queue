@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @question_queue_form.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @question_queue_form.description %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @question_queue_form.department %>
+</p>
+
+<%= link_to 'Edit', edit_question_queue_form_path(@question_queue_form) %> |
+<%= link_to 'Back', question_queue_forms_path %>

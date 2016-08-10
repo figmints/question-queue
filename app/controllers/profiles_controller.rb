@@ -12,7 +12,6 @@ class ProfilesController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @department = Department.find(params[:id])
   end
 
 
