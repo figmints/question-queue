@@ -5,8 +5,14 @@ class QuestionsController < ApplicationController
     # @question = Question.new
   end
 
+  def show
+  end
+
   def new
     @question = Question.new
+  end
+
+  def edit
   end
 
   def create
@@ -20,6 +26,7 @@ class QuestionsController < ApplicationController
       redirect_to root_path
     end
   end
+
 
   private
 
