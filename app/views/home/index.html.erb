@@ -13,6 +13,9 @@
         <%= f.text_field :title, autofocus: true %>
       </div>
       <div class="question-input">
+        <%= f.label :description %>
+        <%= f.text_area :description %>
+      <div class="question-input">
         <%= f.label :department %>
         <%= f.select :department,
             Department::DEPARTMENT, class: "department dropdown"%>

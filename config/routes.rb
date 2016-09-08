@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { registrations: "registrations" }
 
-  resources :questions, only: [:index, :create]
+  resources :questions, only: [:index, :create, :show]
   resources :profiles
+  resources :answers
+  
 end
