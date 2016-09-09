@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users
+  resources :question_queue_forms
   root 'home#index'
-  resources :articles, only: [:index]
+
+  devise_for :users, controllers: { registrations: "registrations" }
+
+  resources :questions, only: [:index, :create, :show] do
+    resources :answers
+
+  end
+  resources :profiles
+  
 end

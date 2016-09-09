@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'pry-rails'
+# Use Active Admin for backend website administration
+# gem 'activeadmin'
+# Use neat as framework for front-end grid
+gem 'neat'
 # Use devise for user authentication
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

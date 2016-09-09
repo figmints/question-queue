@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Questions</title>
+  </head>
+  <body>
+    <% @questions.each do |p| %>
+      <div class="title">
+        <a href="<%= question_path(p) %>">Question: <%= p.title %></a>
+      </div>
+      <div class="description">
+        Description: <%= p.description %>
+      </div>
+      <div class="department">
+        Department: <%= p.department %>
+      </div>
+      <br>
+    <% end %>
+  </body>
+</html>
