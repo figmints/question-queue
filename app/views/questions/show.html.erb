@@ -9,11 +9,16 @@
       Department: <%= @question.department %>
     </div>
 
-    <%= form_for @answers do |f| %>
+    <div class="answers">
+        <span>Answers:</span>
+        <% @answers.each do |a| %>
+            <p class="comment"><%= a.answer %></p>
+        <% end %>
+    </div>
+
+    <%= form_for [@question, @answer] do |f| %>
     <%= f.text_area :answer %>
     <%= f.submit "Answer", class: "button", id: "save_button" %>
 
     <% end %>
-
-
 </body>
