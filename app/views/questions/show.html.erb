@@ -11,9 +11,7 @@
 
     <div class="answers">
         <span>Answers:</span>
-        <% @answers.each do |a| %>
-            <p class="comment"><%= a.answer %></p>
-        <% end %>
+        <%= render @answers %>
     </div>
 
     <%= form_for [@question, @answer] do |f| %>
