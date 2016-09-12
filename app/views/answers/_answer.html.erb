@@ -2,5 +2,12 @@
 
     <p class="comment"><%= answer.answer %></p>
     <% if current_user == answer.user && current_user %>
-        hey you, you did this to me!!!!!
+        this text is visible when user is logged in / user answered question originally
+        <button class="edit">Edit Answer</button>
+        <div class="edit-form">
+            <%= form_for [@question, @answer], class: "edit-form" do |f| %>
+            <%= f.text_area :answer %>
+            <%= f.submit "Save Changes", class: "button", id: "save_button", :class => 'edit_button' %>
+            <% end %>
+        </div>
     <% end %>
