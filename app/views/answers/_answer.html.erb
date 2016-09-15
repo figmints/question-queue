@@ -1,12 +1,13 @@
 <!-- this is an answer file  -->
 
-    <p class="comment"><%= answer.answer %></p>
-    <% if current_user == answer.user && current_user %>
+    <p class="answer"><%= answer.text %></p>
+    <% if current_user == answer.user && current_user || current_user.admin %>
         this text is visible when user is logged in / user answered question originally
         <button class="edit">Edit Answer</button>
+        <%= link_to "Delete Answer", [@question, answer], method: :delete, data: {confirm: "you sure?"} %>
         <div class="edit-form">
-            <%= form_for [@question, @answer], class: "edit-form" do |f| %>
-            <%= f.text_area :answer %>
+            <%= form_for [@question, answer], class: "edit-form" do |f| %>
+            <%= f.text_area :text %>
             <%= f.submit "Save Changes", class: "button", id: "save_button", :class => 'edit_button' %>
             <% end %>
         </div>

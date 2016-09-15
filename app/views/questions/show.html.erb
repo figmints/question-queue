@@ -15,7 +15,7 @@
     </div>
 
     <%= form_for [@question, @answer] do |f| %>
-    <%= f.text_area :answer %>
+    <%= f.text_area :text %>
     <%= f.submit "Answer", class: "button", id: "save_button" %>
 
     <% end %>

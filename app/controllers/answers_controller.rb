@@ -26,12 +26,12 @@ class AnswersController < ApplicationController
   def update
     @question = Question.find(params[:question_id])
     @answer = Answer.find(params[:id])
-    @answer.update(answer_params)
-    if @answer.update_attributes(answer_params)
-        redirect_to question_path(@question)
+    if @answer.update(answer_params)
+        flash[:success] = "you did it, good work!"
     else
-        redirect_to question_path(@question)
+        flash[:error] = "Your edit didnt save"
     end
+    redirect_to question_path(@question)
   end
 
   def destroy
@@ -45,7 +45,7 @@ class AnswersController < ApplicationController
   protected
 
   def answer_params
-    params.require(:answer).permit(:answer)
+    params.require(:answer).permit(:text)
   end
 
 end
