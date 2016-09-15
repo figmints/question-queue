@@ -1,0 +1,43 @@
+/*********************************************
+ *
+ *        Responsive Typography
+ *
+ *********************************************/
+
+$min-font: 14px
+$min-line: $min-font * 1.5
+$base-xs: 0.6
+$base-sm: 0.8
+$base-md: 0.9
+$base-lg: 1
+
+
+@mixin transform($transforms)
+  -moz-transform: $transforms
+  -o-transform: $transforms
+  -ms-transform: $transforms
+  -webkit-transform: $transforms
+  transform: $transforms
+
+
+=responsive-type($font-size, $line-height, $letter-spacing: 0)
+
+  @include media($micro-screen-up)
+    font-size: rem( max($min-font, $font-size * $base-xs) )
+    line-height: rem( max($min-line, $line-height * $base-xs) )
+    letter-spacing: rem( $letter-spacing * $base-xs )
+
+  @include media($small-screen-up)
+    font-size: rem( max($min-font, $font-size * $base-sm) )
+    line-height: rem( max($min-line, $line-height * $base-sm) )
+    letter-spacing: rem( $letter-spacing * $base-sm )
+
+  @include media($medium-screen-up)
+    font-size: rem( max($min-font, $font-size * $base-md)  )
+    line-height: rem( max($min-line, $line-height * $base-md) )
+    letter-spacing: rem( $letter-spacing * $base-md )
+
+  @include media ($large-screen-up)
+    font-size: rem( max($min-font, $font-size * $base-lg)  )
+    line-height: rem( max($min-line, $line-height * $base-lg) )
+    letter-spacing: rem( $letter-spacing * $base-lg )
