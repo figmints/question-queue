@@ -14,7 +14,7 @@
   </div>
 
   <div class="field">
-    <%= f.fields_for :department do |d| %>
+    <%= f.fields_for :department_id do |d| %>
       <%= d.label :department %>
       <%= d.select :name,
           Department::DEPARTMENT, class: "department dropdown"%>
