@@ -16,8 +16,7 @@
   <div class="field">
     <%= f.fields_for :department_id do |d| %>
       <%= d.label :department %>
-      <%= d.select :name,
-          Department::DEPARTMENT, class: "department dropdown"%>
+      <%= collection_select(:department, :department_id, Department.all, :id, :name) %>
     <% end %>
   </div>
 

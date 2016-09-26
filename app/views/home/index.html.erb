@@ -17,8 +17,7 @@
         <%= f.text_area :description %>
       <div class="question-input">
         <%= f.label :department %>
-        <%= f.select :department,
-            Department::DEPARTMENT, class: "department dropdown"%>
+        <%= collection_select(:department, :department_id, Department.all, :id, :name) %>
       </div>
       <div class="question-submit">
         <%= f.submit "Ask!", class: "button", id: "save_button" %>
