@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :answers
-  has_one :department
+  belongs_to :department
 
   accepts_nested_attributes_for :department
 

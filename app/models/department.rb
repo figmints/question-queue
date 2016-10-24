@@ -1,13 +1,5 @@
 class Department < ActiveRecord::Base
   belongs_to :question
-  belongs_to :user
+  has_one :user
 
-  DEPARTMENT = [
-    "Development",
-    "HR / Administration",
-    "Design",
-    "Marketing",
-    "Sales",
-    "Account Managers"
-  ]
 end

@@ -8,7 +8,8 @@ Rails.application.routes.draw do
     resources :answers
 
   end
-  
-  get 'my_profile', to: :show, controller: 'my_profile'
 
+  get 'my_profile', to: :show, controller: 'my_profile'
+  resources :profiles
+  
 end
