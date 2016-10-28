@@ -7,14 +7,13 @@ class RegistrationsController < Devise::RegistrationsController
   def create
 
     @user = User.new(user_params)
-    binding.pry
     # @user.save
     # broken feature will look into sign-up redirect to user logged in
     # redirect_to root_path
     # @user = current_user.users_build(user_params)
-
     if @user.save
       flash[:success] = "User created!"
+      UserMailer.welcome_email(@user).deliver_later
       redirect_to root_path
     else
       render 'new'
