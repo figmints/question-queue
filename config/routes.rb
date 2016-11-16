@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'hello_world', to: 'hello_world#index'
   resources :question_queue_forms
   root 'home#index'
 
