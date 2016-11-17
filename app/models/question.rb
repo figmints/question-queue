@@ -4,4 +4,5 @@ class Question < ActiveRecord::Base
 
   validates :title, presence: true
   validates :department, presence: true
+
 end

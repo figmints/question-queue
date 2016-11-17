@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 20160916135836) do
     t.string   "profile_photo"
     t.boolean  "admin"
     t.string   "title"
-    t.integer   "department_id"
+    t.string   "department_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

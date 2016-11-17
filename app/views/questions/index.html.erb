@@ -5,6 +5,8 @@
     <title>Questions</title>
   </head>
   <body>
+
+    <!-- <%= link_to 'filtered_department', {controller: 'questions', action: 'index', :department => 'the_department'} %> -->
     <% @questions.each do |p| %>
       <div class="title">
         <a href="<%= question_path(p) %>">Question: <%= p.title %></a>

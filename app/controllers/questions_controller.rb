@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-
+  
   def index
     @questions = Question.all
     # @question = Question.new
@@ -29,6 +29,14 @@ class QuestionsController < ApplicationController
     else
         redirect_to question_path(@question)
     end
+  end
+
+  def destroy
+    @question = Question.find(params[:id])
+    if @question.present?
+      @question.destroy
+    end
+    redirect_to questions_path
   end
 
   def create

@@ -7,21 +7,26 @@
       </li>
       <li>
         <a href="<%= questions_path %>">Questions</a>
+        <ul>
+          <li>
+            <% @departments.each do |d| %>
+              <%= d.name %>
+            <% end %>
+          </li>
+        </ul>
       </li>
     </ul>
 
 
-    <li>My Account
-      <ul>
+    <ul>My Account
         <li><%= link_to 'My Profile', my_profile_path %></li>
         <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-    </li>
+    </ul>
     <%- else -%>
       <ul>
         <li><%= link_to 'Sign Up', new_user_registration_path %></li>
         <li><%= link_to 'Sign In', new_user_session_path %></li>
     <%- end -%>
       </ul>
-    </li>
   </div>
 </header>
