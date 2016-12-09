@@ -1,9 +1,8 @@
 <!-- this is an answer file  -->
     <p class="answer"><%= answer.text %></p>
     <% if current_user == answer.user && current_user || current_user.admin %>
-        this text is visible when user is logged in / user answered question originally
         <button class="edit">Edit Answer</button>
-        <%= link_to "Delete Answer", [@question, answer], method: :delete, data: {confirm: "you sure?"} %>
+        <%= link_to "Delete Answer", [@question, answer], method: :delete, data: {confirm: "Are you sure you want to delete your answer?"} %>
         <div class="edit-form">
             <%= form_for [@question, answer], class: "edit-form" do |f| %>
             <%= f.text_area :text %>

@@ -2,7 +2,6 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.all
-    # @question = Question.new
   end
 
   def show
@@ -21,14 +20,13 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    @question = Question.find(params[:question_id])
-    @answer = Answer.find(params[:id])
-    @answer.update(answer_params)
-    if @answer.update_attributes(answer_params)
+    @question = Question.find(params[:id])
+    if @question.update_attributes(question_params)
         redirect_to question_path(@question)
     else
         redirect_to question_path(@question)
     end
+
   end
 
   def destroy
@@ -46,19 +44,8 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to questions_path
     else
-      # flash[:errors] = @question.errors.full_messages.join(". ")
       redirect_to root_path
     end
-
-    # @answer = Answer.new(answer_params)
-    # @answer.user = current_user
-    #
-    # if @answer.save
-    #   redirect_to question_path
-    # else
-    #   # flash[:errors] = @question.errors.full_messages.join(". ")
-    #   redirect_to question_path
-    # end
   end
 
 
