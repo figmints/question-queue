@@ -8,8 +8,9 @@ Rails.application.routes.draw do
 
   resources :questions do
     resources :answers
-
   end
+
+  resources :search, only: [:index]
 
   get 'my_profile', to: :show, controller: 'my_profile'
   resources :profiles
