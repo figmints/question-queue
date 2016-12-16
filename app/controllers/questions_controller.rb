@@ -52,7 +52,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:title, :description, :department_id)
+    params.require(:question).permit(:title, :description, :department_id, :verified_answer)
   end
 
   def answer_params
