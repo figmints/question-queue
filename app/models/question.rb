@@ -6,9 +6,13 @@ class Question < ActiveRecord::Base
   include PgSearch
   pg_search_scope :search, :against => [:title, :description],
                   :using => {
-                    :tsearch => {:dictionary => "english"}
+                    :tsearch => {:dictionary => "english"},
+                    :trigram => {
+                      :threshold => 0.1
+                    }
                   },
-                  associated_against: {department: :name}
+                  associated_against: {department: :name},
+                  :ignoring => :accents
 
   def self.text_search(query)
     if query.present?
