@@ -1,11 +1,6 @@
-<html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
-  </head>
-  <body>
-    <h1>Welcome to QuestionQueue.com <%= @user.first_name %></h1>
-    <p>You have successfully signed up for Question Queue!</p>
-    <p>You may now ask any question you desire to any department at Figmints!</p>
-    <p>You can login to the site at <%= @url %></p>
-  </body>
-</html>
+<%= render 'layouts/email_header' %>
+  <h1>Welcome to QuestionQueue.com <%= @user.first_name %></h1>
+  <p>You have successfully signed up for Question Queue!</p>
+  <p>You may now ask any question you desire to any department at Figmints!</p>
+  <p>You can login to the site at <%= @url %></p>
+<%= render 'layouts/email_footer' %>
