@@ -6,6 +6,13 @@
   </head>
   <body>
 
+    <%= form_tag questions_path, method: :get do %>
+        <p>
+            <%= text_field_tag :query, params[:query] %>
+            <%= submit_tag "Search", name: nil %>
+        </p>
+    <% end %>
+
     <!-- <%= link_to 'filtered_department', {controller: 'questions', action: 'index', :department => 'the_department'} %> -->
     <% @questions.each do |p| %>
       <div class="title">
@@ -19,5 +26,7 @@
       </div>
       <br>
     <% end %>
+
+  <%= will_paginate @questions %>
   </body>
 </html>

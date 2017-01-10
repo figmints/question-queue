@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
 
   def index
-    @questions = Question.all
+    @questions = Question.text_search(params[:query]).page(params[:page]).per_page(2)
   end
 
   def show
@@ -42,7 +42,7 @@ class QuestionsController < ApplicationController
     @question.user = current_user
 
     if @question.save
-      redirect_to questions_path
+      redirect_to question_path(@question)
     else
       redirect_to root_path
     end
