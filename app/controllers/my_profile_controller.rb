@@ -4,4 +4,8 @@ class MyProfileController < ApplicationController
     @user = current_user
   end
 
+  def question
+    @user = current_user
+  end
+
 end
