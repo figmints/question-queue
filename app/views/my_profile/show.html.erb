@@ -1,11 +1,11 @@
-<body class="profile-page">
+<div class="profile-page">
+  <%= render 'layouts/profile' %>
   <section>
     <h1>Hello <%= @user.first_name %>!</h1>
     <column>
       <p class="user-name">User Name: <%= @user.first_name %> <%= @user.last_name %></p>
       <p class="user-email">User Email: <%= @user.email %></p>
-      Department: <%= @user.department.name %>
-      </p>
+      <p>Department: <%= @user.department.name %></p>
     </column>
   </section>
-</body>
+</div>

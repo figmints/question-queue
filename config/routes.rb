@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   resources :search, only: [:index]
 
   get 'my_profile', to: :show, controller: 'my_profile'
+  get 'my_profile/question', to: 'my_profile#question'
   resources :profiles
+
+  # resources :my_profile
 
 end
