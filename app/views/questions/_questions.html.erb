@@ -1,0 +1,27 @@
+<div class="title">
+  Question: <%= @question.title %>
+</div>
+<div class="description">
+  Description: <%= @question.description %>
+</div>
+<% if @question.verified_answer %>
+    This is where an image of a nice green checkbox will display!
+<% end %>
+<div class="department">
+  Department: <%= @question.department.name %>
+</div>
+<% if current_user == @question.user && current_user || current_user.admin %>
+  <button class="edit">Edit Question</button>
+  <div class="edit-form edit-question">
+      <%= form_for @question, class: "edit-form" do |f| %>
+          <%= f.text_field :title %>
+          <%= f.text_area :description %>
+          <%= f.submit "Save Changes", class: "button", id: "save_button", :class => 'edit_button' %>
+      <% end %>
+      <%= form_for @question do |q| %>
+          <%= q.check_box :verified_answer %>
+          <%= q.submit "verified"  %>
+      <% end %>
+  </div>
+  <%= link_to "Delete Question", @question, method: :delete, data: {confirm: "Are you sure you want to delete your answer?"} %>
+<% end %>

@@ -1,8 +1,7 @@
 class QuestionsController < ApplicationController
 
   def index
-    @questions = Question.all
-    # @question = Question.new
+    @questions = Question.text_search(params[:query]).page(params[:page]).per_page(2)
   end
 
   def show
@@ -21,14 +20,21 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    @question = Question.find(params[:question_id])
-    @answer = Answer.find(params[:id])
-    @answer.update(answer_params)
-    if @answer.update_attributes(answer_params)
+    @question = Question.find(params[:id])
+    if @question.update_attributes(question_params)
         redirect_to question_path(@question)
     else
         redirect_to question_path(@question)
     end
+
+  end
+
+  def destroy
+    @question = Question.find(params[:id])
+    if @question.present?
+      @question.destroy
+    end
+    redirect_to questions_path
   end
 
   def create
@@ -36,28 +42,17 @@ class QuestionsController < ApplicationController
     @question.user = current_user
 
     if @question.save
-      redirect_to questions_path
+      redirect_to question_path(@question)
     else
-      # flash[:errors] = @question.errors.full_messages.join(". ")
       redirect_to root_path
     end
-
-    # @answer = Answer.new(answer_params)
-    # @answer.user = current_user
-    #
-    # if @answer.save
-    #   redirect_to question_path
-    # else
-    #   # flash[:errors] = @question.errors.full_messages.join(". ")
-    #   redirect_to question_path
-    # end
   end
 
 
   private
 
   def question_params
-    params.require(:question).permit(:title, :description, :department)
+    params.require(:question).permit(:title, :description, :department_id, :verified_answer)
   end
 
   def answer_params

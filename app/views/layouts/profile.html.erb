@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Question Queue</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+    <%= render "layouts/header" %>
+
+    <section class="profile-settings">
+      <ul>
+        <li><%= link_to "My Questions", my_profile_profile_questions_path %></li>
+      </ul>
+    </section>
+
+    <%= yield %>
+
+  </body>
+</html>

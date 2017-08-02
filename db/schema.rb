@@ -11,10 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160916135836) do
+ActiveRecord::Schema.define(version: 20170110170156) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "pg_trgm"
+  enable_extension "unaccent"
 
   create_table "answers", force: :cascade do |t|
     t.string  "text",            null: false
@@ -43,12 +45,13 @@ ActiveRecord::Schema.define(version: 20160916135836) do
   end
 
   create_table "questions", force: :cascade do |t|
-    t.string   "title",       null: false
-    t.string   "department",  null: false
+    t.string   "title",                           null: false
     t.string   "description"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "department_id"
+    t.boolean  "verified_answer", default: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -69,7 +72,7 @@ ActiveRecord::Schema.define(version: 20160916135836) do
     t.string   "profile_photo"
     t.boolean  "admin"
     t.string   "title"
-    t.integer   "department_id"
+    t.string   "department_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

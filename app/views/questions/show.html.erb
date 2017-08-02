@@ -1,22 +1,12 @@
-<body>
-    <div class="title">
-      Question: <%= @question.title %>
-    </div>
-    <div class="description">
-      Description: <%= @question.description %>
-    </div>
-    <div class="department">
-      Department: <%= @question.department %>
-    </div>
+<%= render "questions" %>
 
-    <div class="answers">
-        <span>Answers:</span>
-        <%= render @answers %>
-    </div>
+<div class="answers">
+  <span>Answers:</span>
+  <%= render @answers %>
+</div>
 
-    <%= form_for [@question, @answer] do |f| %>
-    <%= f.text_area :text %>
-    <%= f.submit "Answer", class: "button", id: "save_button" %>
+<%= form_for [@question, @answer] do |f| %>
+  <%= f.text_area :text %>
+  <%= f.submit "Answer", class: "button", id: "save_button" %>
 
-    <% end %>
-</body>
+<% end %>
