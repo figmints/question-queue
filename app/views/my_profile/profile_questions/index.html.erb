@@ -1,0 +1,15 @@
+<% if @user.questions.empty? %>
+  <p>You haven't asked any questions! <%= link_to "Ask Now", root_path %><p>
+<% else %>
+  <% @question_false.each do |q| %>
+    <strong>Non-verified Answers</strong>
+    <%= render partial:"display_questions", locals: {q: q } %>
+    <%= will_paginate @question_false %>
+  <% end %>
+
+  <% @question_true.each do |q| %>
+    <strong>Verified answers:</strong>
+    <%= render partial:"display_questions", locals: {q: q } %>
+    <%= will_paginate @question_true %>
+  <% end %>
+<% end %>
