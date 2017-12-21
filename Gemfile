@@ -31,6 +31,8 @@ gem 'pg_search'
 
 gem 'will_paginate', '~> 3.1.0'
 
+gem "react_on_rails", "10.0.0"
+
 gem 'webpacker', '~> 3.0'
 
 
