@@ -15,4 +15,6 @@
 *.DS_Store
 
 
-client/node_modules
+client/node_modules/public/packs
+/public/packs-test
+/node_modules
