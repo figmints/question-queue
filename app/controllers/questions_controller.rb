@@ -2,6 +2,7 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.text_search(params[:query]).page(params[:page]).per_page(2)
+    @news = @questions.to_json
   end
 
   def show

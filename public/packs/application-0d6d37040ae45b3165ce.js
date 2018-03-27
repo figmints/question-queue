@@ -60,11 +60,12 @@
 /******/ 	__webpack_require__.p = "/packs/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 79);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 79:
 /*!*********************************************!*\
   !*** ./app/javascript/packs/application.js ***!
   \*********************************************/
@@ -82,7 +83,9 @@
 // layout file, like app/views/layouts/application.html.erb
 
 console.log('Hello World from Webpacker!!');
+// import './bundle.js';
 
 /***/ })
-/******/ ]);
-//# sourceMappingURL=application-73f0bc96f019f70f781e.js.map
+
+/******/ });
+//# sourceMappingURL=application-0d6d37040ae45b3165ce.js.map
